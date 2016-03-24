@@ -3,7 +3,8 @@ FROM phusion/baseimage:latest
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
 
-RUN apt-get install redis-server -y
+# install util-linux for "runuser" and redis server
+RUN apt-get install util-linux redis-server -y
 
 VOLUME /var/lib/redis
 
